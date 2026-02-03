@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Side Web App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 to-gray-800 min-h-screen text-white flex flex-col">
+
+<!-- NAVBAR -->
+<nav class="bg-black/60 p-4 flex justify-center gap-8 text-lg sticky top-0 z-10">
+  <button onclick="showPage('home')" class="hover:text-red-400">Home</button>
+  <button onclick="showPage('about')" class="hover:text-red-400">About</button>
+  <button onclick="showPage('register')" class="hover:text-red-400">App</button>
+  <button onclick="showPage('contact')" class="hover:text-red-400">Contact</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="p-10 text-center">
+  <h1 class="text-4xl font-bold mb-6 text-blue-400">Welcome 👋</h1>
+  <p class="max-w-3xl mx-auto text-gray-300 mb-4 leading-relaxed">
+    Welcome to this educational website focused on Client Side Web Applications.
+    Here you will learn how JavaScript is used to control forms, validate data,
+    and interact with the DOM inside the browser.
+  </p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="hidden p-10 text-center">
+  <h2 class="text-3xl font-bold mb-4 text-red-400">About This Website</h2>
+  <p class="text-gray-300 max-w-2xl mx-auto">
+    This website is a pure client side web application built using
+    HTML, Tailwind CSS, and JavaScript only.
+  </p>
+</section>
+
+<!-- REGISTER -->
+<section id="register" class="hidden p-10 flex justify-center">
+  <div class="w-full max-w-4xl">
+
+    <!-- COUNTERS -->
+    <div class="flex justify-center gap-4 mb-8">
+      <div class="bg-black px-4 py-3 rounded-lg text-center w-36">
+        <p class="text-sm">Total Clients</p>
+        <h2 class="text-xl font-bold">200</h2>
+      </div>
+      <div class="bg-red-600 px-4 py-3 rounded-lg text-center w-36">
+        <p class="text-sm">Registered</p>
+        <h2 id="registeredSeats" class="text-xl font-bold">0</h2>
+      </div>
+      <div class="bg-blue-600 px-4 py-3 rounded-lg text-center w-36">
+        <p class="text-sm">Remaining</p>
+        <h2 id="remainingSeats" class="text-xl font-bold">200</h2>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="bg-white text-black p-6 rounded-xl shadow-xl max-w-md mx-auto">
+      <h3 class="text-2xl font-bold text-center mb-4">Student Registration</h3>
+
+      <form id="userForm" class="space-y-3">
+        <input id="fullname" type="text" placeholder="Full Name" class="w-full p-2 border rounded">
+        <input id="age" type="number" placeholder="Age" class="w-full p-2 border rounded">
+        <input id="email" type="email" placeholder="Email" class="w-full p-2 border rounded">
+        <input id="password" type="password" placeholder="Password" class="w-full p-2 border rounded">
+
+        <select id="course" class="w-full p-2 border rounded">
+          <option value="">Select Course</option>
+          <option>JavaScript</option>
+          <option>Networking</option>
+          <option>English</option>
+        </select>
+
+        <button class="w-full bg-black text-white py-2 rounded hover:bg-gray-800">
+          Submit
+        </button>
+      </form>
+
+      <p id="error" class="text-red-600 mt-3 text-left"></p>
+
+      <div id="content" class="hidden mt-6 bg-gray-100 p-4 rounded">
+        <h4 class="font-bold mb-2">Content for Clients</h4>
+        <div id="output" class="text-sm space-y-2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="hidden p-10 flex justify-center">
+  <div class="w-full max-w-md">
+    <h3 class="text-2xl font-bold text-center mb-4 text-green-400">Contact Us</h3>
+
+    <p class="text-gray-300 text-center mb-4">
+      If you have any questions, please leave us a comment.
+    </p>
+
+    <form id="contactForm" class="space-y-3 bg-white text-black p-6 rounded-xl shadow-xl">
+      <input id="contactName" type="text" placeholder="Full Name" class="w-full p-2 border rounded">
+      <input id="contactEmail" type="email" placeholder="Email" class="w-full p-2 border rounded">
+      <textarea id="contactComments" placeholder="Comments" class="w-full p-2 border rounded"></textarea>
+
+      <button class="w-full bg-black text-white py-2 rounded hover:bg-gray-800">
+        Submit
+      </button>
+
+      <p id="contactError" class="text-red-600 mt-2 text-left"></p>
+      <div id="contactOutput" class="hidden mt-4 text-sm"></div>
+    </form>
+  </div>
+</section>
+
+<footer class="bg-black/70 text-center p-4 mt-auto text-sm">
+  © 2026 Client Side Web Application
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
